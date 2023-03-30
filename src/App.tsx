@@ -1,26 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Home, Team, Scope, Portfolio, Contact } from "./pages";
+import { Routes, Route } from "react-router-dom";
+import { Layout } from "./components/Layout/Layout";
+import "./App.scss";
+
+export const routes = [
+	{
+		path: "/",
+		linkText: "Home",
+		component: <Home />,
+	},
+	{
+		path: "/zespol",
+		linkText: "Zespół",
+		component: <Team />,
+	},
+	{
+		path: "/zakres",
+		linkText: "Zakres działań",
+		component: <Scope />,
+	},
+	{
+		path: "/portfolio",
+		linkText: "Portfolio",
+		component: <Portfolio />,
+	},
+	{
+		path: "/contact",
+		linkText: "Kontakt",
+		component: <Contact />,
+	},
+];
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const routeComponents = routes.map(({ path, component }) => (
+		<Route path={path} element={component} key={path} />
+	));
+
+	return (
+		<div className="App">
+			<Layout>
+				<Routes>{routeComponents}</Routes>
+			</Layout>
+		</div>
+	);
 }
 
 export default App;
