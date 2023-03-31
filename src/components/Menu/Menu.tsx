@@ -12,9 +12,10 @@ const NavList = styled.ul`
 	li > a {
 		text-decoration: none;
 		color: #000;
+		transition: all 0.2s ease-in-out;
 
 		&:hover {
-			color: pink;
+			color: var(--pink);
 		}
 	}
 `;

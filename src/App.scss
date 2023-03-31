@@ -1,6 +1,12 @@
+:root {
+  --pink: #ff0099;
+  --lightPink: #ffb4e1;
+  --yellow: #ffde59;
+}
+
 .App {
   height: 100%;
-	background: #ffde59;
+	background: var(--yellow);
   font-size: 34px;
 }
 
