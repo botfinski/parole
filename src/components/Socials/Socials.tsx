@@ -11,6 +11,10 @@ const SocialsList = styled.ul`
 
 	& > li {
 		width: 40px;
+
+		&:not(:last-child) {
+			margin-right: 20px;
+		}
 	}
 `;
 

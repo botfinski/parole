@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 interface PropStyles {
 	menuOpened?: boolean;
+	// currentRoute?: string;
 }
 
 export const ToggleButton = styled.button<PropStyles>`
@@ -99,7 +100,7 @@ export const Aside = styled.aside<PropStyles>`
 	width: 400px;
 	padding: 60px;
 	z-index: 0;
-	background: var(--yellow);
+	background: var(--lavender);
 	opacity: 0;
 	color: #000;
 	transition: all 0.8s cubic-bezier(0.68, 0, 0.29, 1);
@@ -109,4 +110,12 @@ export const Aside = styled.aside<PropStyles>`
 		`
     opacity: 1
   `}
+`;
+
+export const Wrapper = styled.div`
+	height: 100%;
+	max-width: 80%;
+	display: flex;
+	flex-direction: column;
+	margin: 3em auto 0;
 `;

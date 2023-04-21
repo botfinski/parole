@@ -1,7 +1,7 @@
 import { Home } from "./Home";
-import { Team } from "./Team";
-import { Scope } from "./Scope";
+import { About } from "./About";
+import { Offer } from "./Offer";
 import { Portfolio } from "./Portfolio";
 import { Contact } from "./Contact";
 
-export { Home, Team, Scope, Portfolio, Contact };
+export { Home, About, Offer, Portfolio, Contact };

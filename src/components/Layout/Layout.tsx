@@ -3,7 +3,9 @@ import { Menu } from "../Menu/Menu";
 import { Socials } from "../Socials/Socials";
 import { useLocation } from "react-router-dom";
 import { Aside, Main, ToggleButton, Top, Logo } from "./styles";
-import logo from "../../images/logo.jpg";
+import logo from "../../images/logo-horizontal.jpg";
+import { routes } from "../../App";
+import { PageTitle } from "../PageTitle/PageTitle";
 
 interface Props {
 	children: React.ReactNode;
@@ -21,6 +23,10 @@ export const Layout: React.FC<Props> = ({ children }) => {
 		setMenuOpened(false);
 	}, [pathname]);
 
+	const currentRoute = routes.filter(route => route.path === pathname)[0];
+
+	// console.log(currentRoute);
+
 	return (
 		<>
 			<Aside menuOpened={menuOpened}>
@@ -34,6 +40,9 @@ export const Layout: React.FC<Props> = ({ children }) => {
 					</ToggleButton>
 					<Logo alt="Logo" src={logo} />
 				</Top>
+				{currentRoute.title !== "Home" && (
+					<PageTitle>{currentRoute.title}</PageTitle>
+				)}
 				{children}
 			</Main>
 		</>

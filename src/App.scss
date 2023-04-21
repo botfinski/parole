@@ -2,11 +2,13 @@
   --pink: #ff0099;
   --lightPink: #ffb4e1;
   --yellow: #ffde59;
+  --lavender: #cda4f2;
 }
 
 .App {
   height: 100%;
-	background: var(--yellow);
+	background: var(--lavender);
   font-size: 34px;
+  text-transform: uppercase;
 }
 

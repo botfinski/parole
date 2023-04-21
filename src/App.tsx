@@ -1,5 +1,5 @@
 import React from "react";
-import { Home, Team, Scope, Portfolio, Contact } from "./pages";
+import { Home, Offer, Portfolio, Contact, About } from "./pages";
 import { Routes, Route } from "react-router-dom";
 import { Layout } from "./components/Layout/Layout";
 import "./App.scss";
@@ -7,27 +7,27 @@ import "./App.scss";
 export const routes = [
 	{
 		path: "/",
-		linkText: "Home",
+		title: "Home",
 		component: <Home />,
 	},
 	{
-		path: "/zespol",
-		linkText: "Zespół",
-		component: <Team />,
+		path: "/o-nas",
+		title: "O nas",
+		component: <About />,
 	},
 	{
-		path: "/zakres",
-		linkText: "Zakres działań",
-		component: <Scope />,
+		path: "/oferta",
+		title: "Oferta",
+		component: <Offer />,
 	},
 	{
 		path: "/portfolio",
-		linkText: "Portfolio",
+		title: "Portfolio",
 		component: <Portfolio />,
 	},
 	{
 		path: "/contact",
-		linkText: "Kontakt",
+		title: "Kontakt",
 		component: <Contact />,
 	},
 ];
