@@ -25,20 +25,22 @@ export const Layout: React.FC<Props> = ({ children }) => {
 
 	const currentRoute = routes.filter(route => route.path === pathname)[0];
 
-	// console.log(currentRoute);
+	const isHomeOrContact =
+		currentRoute.path === "/" || currentRoute.path === "/contact";
 
+	// console.log(isHomeOrContact);
 	return (
 		<>
 			<Aside menuOpened={menuOpened}>
 				<Menu />
 				<Socials />
 			</Aside>
-			<Main menuOpened={menuOpened}>
+			<Main menuOpened={menuOpened} isHomeOrContact={isHomeOrContact}>
 				<Top>
 					<ToggleButton onClick={handleMenuToggle} menuOpened={menuOpened}>
 						<span></span>
 					</ToggleButton>
-					<Logo alt="Logo" src={logo} />
+					<Logo alt="Logo Parole Media" src={logo} />
 				</Top>
 				{currentRoute.title !== "Home" && (
 					<PageTitle>{currentRoute.title}</PageTitle>

@@ -4,7 +4,9 @@ import styled from "styled-components";
 interface Props {
 	children: React.ReactNode;
 }
+
 const H2 = styled.h2`
+	margin-top: 0.25em;
 	font-size: 4em;
 	line-height: 1em;
 	/* text-transform: uppercase; */

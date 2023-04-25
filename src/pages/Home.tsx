@@ -1,7 +1,4 @@
-import React from "react";
 import styled from "styled-components";
-
-interface Props {}
 
 const Wrapper = styled.div`
 	height: 100%;
@@ -21,7 +18,7 @@ const Header = styled.h2`
 		var(--pink) 0px 0px 22px;
 `;
 
-export const Home: React.FC<Props> = () => {
+export const Home = () => {
 	return (
 		<Wrapper>
 			<Header>

@@ -11,8 +11,8 @@ export const routes = [
 		component: <Home />,
 	},
 	{
-		path: "/o-nas",
-		title: "O nas",
+		path: "/my",
+		title: "My",
 		component: <About />,
 	},
 	{

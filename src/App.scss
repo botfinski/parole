@@ -3,12 +3,15 @@
   --lightPink: #ffb4e1;
   --yellow: #ffde59;
   --lavender: #cda4f2;
+  --transition: all 0.8s cubic-bezier(0.68, 0, 0.29, 1);
+  --text-shadow: var(--pink) 0px 0px 22px, var(--pink) 0px 0px 22px,
+		var(--pink) 0px 0px 22px; 
 }
 
 .App {
   height: 100%;
 	background: var(--lavender);
   font-size: 34px;
+  font-weight: 700;
   text-transform: uppercase;
 }
-

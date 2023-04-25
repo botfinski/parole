@@ -2,7 +2,9 @@ import styled from "styled-components";
 
 interface PropStyles {
 	menuOpened?: boolean;
-	// currentRoute?: string;
+	isHomeOrContact?: boolean;
+	marginBottom?: boolean;
+	alignCenter?: boolean;
 }
 
 export const ToggleButton = styled.button<PropStyles>`
@@ -63,6 +65,8 @@ export const ToggleButton = styled.button<PropStyles>`
 
 export const Top = styled.div`
 	height: 100px;
+	position: absolute;
+	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
@@ -74,10 +78,11 @@ export const Logo = styled.img`
 `;
 
 export const Main = styled.main<PropStyles>`
-	position: fixed;
+	/* position: fixed; */
+	/* overflow: scroll; */
 	width: 100%;
 	height: 100%;
-	background: #fff;
+	background: ${props => (!props.isHomeOrContact ? `var(--lavender)` : `#fff`)};
 	z-index: 1;
 	transition: all 0.8s cubic-bezier(0.68, 0, 0.29, 1);
 
@@ -112,10 +117,40 @@ export const Aside = styled.aside<PropStyles>`
   `}
 `;
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<PropStyles>`
 	height: 100%;
 	max-width: 80%;
 	display: flex;
 	flex-direction: column;
 	margin: 3em auto 0;
+	align-items: ${props => (props.alignCenter ? `center` : `normal`)};
+`;
+
+export const Subheader = styled.h3`
+	margin-bottom: 0.25em;
+	font-size: 3em;
+	text-align: center;
+	color: var(--lightPink);
+	text-shadow: var(--text-shadow);
+`;
+
+export const Caption = styled.figure<PropStyles>`
+	margin-bottom: ${props => (props.marginBottom ? `2em` : `1em`)};
+
+	& > figcaption {
+		text-align: right;
+	}
+`;
+
+export const Typography = styled.p`
+	font-size: 25px;
+	font-weight: 400;
+`;
+
+export const H3 = styled.h3`
+	font-size: 1.55em;
+`;
+
+export const H4 = styled.h4`
+	font-size: 1.17em;
 `;
