@@ -1,8 +1,5 @@
-import React from "react";
 import styled from "styled-components";
 import { FacebookIcon, InstagramIcon, LinkedInIcon } from "../Icons/Icons";
-
-interface Props {}
 
 const SocialsList = styled.ul`
 	display: flex;
@@ -14,6 +11,15 @@ const SocialsList = styled.ul`
 
 		&:not(:last-child) {
 			margin-right: 20px;
+		}
+
+		a:hover {
+			svg path,
+			svg rect,
+			svg circle {
+				transition: all 0.2s ease-in-out;
+				stroke: var(--pink);
+			}
 		}
 	}
 `;
@@ -36,7 +42,7 @@ const socials = [
 	},
 ];
 
-export const Socials: React.FC<Props> = () => {
+export const Socials = () => {
 	return (
 		<SocialsList>
 			{socials.map(social => (

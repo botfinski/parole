@@ -22,6 +22,11 @@ const ContactList = styled.ul`
 		a {
 			color: inherit;
 			text-decoration: none;
+			transition: all 0.2s ease-in-out;
+
+			&:hover {
+				color: var(--pink);
+			}
 		}
 	}
 `;

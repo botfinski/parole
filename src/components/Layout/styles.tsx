@@ -78,7 +78,7 @@ export const Logo = styled.img`
 `;
 
 export const Main = styled.main<PropStyles>`
-	/* position: fixed; */
+	position: fixed;
 	/* overflow: scroll; */
 	width: 100%;
 	height: 100%;

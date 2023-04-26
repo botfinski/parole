@@ -7,39 +7,50 @@ import {
 } from "../components/Layout/styles";
 import styled from "styled-components";
 
+const Content = styled.div`
+	margin-top: 0;
+	max-height: 0;
+	opacity: 0;
+	transition: all 0.4s ease-in-out;
+`;
+
 const Accordion = styled.ul`
 	list-style: none;
 	display: flex;
 	flex-flow: row wrap;
+	align-items: flex-start;
 	gap: 20px;
 
 	& > li {
 		width: calc(50% - 20px);
 		padding: 20px;
 		border-radius: 20px;
-		/* max-height: 100px; */
 		overflow: hidden;
-		transition: var(--transition);
 
 		&:hover {
 			max-height: none;
-			transition: var(--transition);
+
+			& ${Content} {
+				max-height: 300px;
+				margin-top: 0.25em;
+				opacity: 1;
+			}
 		}
 
 		&:nth-child(1) {
-			background-color: #a548ff;
+			background: linear-gradient(30deg, #a548ff, #7e36c7 70%);
 		}
 
 		&:nth-child(2) {
-			background-color: #ff738e;
+			background: linear-gradient(30deg, #ff738e, #db5f78 70%);
 		}
 
 		&:nth-child(3) {
-			background-color: #ffd93b;
+			background: linear-gradient(30deg, #ffd93b, #f7b542 70%);
 		}
 
 		&:nth-child(4) {
-			background-color: #00c4cc;
+			background: linear-gradient(30deg, #00c4cc, #0093cc 70%);
 		}
 	}
 `;
@@ -114,13 +125,7 @@ const accordionContent = [
 					<figcaption>&mdash;&nbsp;Michael Hyatt</figcaption>
 				</Caption>
 				<Typography>
-					Identyfikacja wizualna
-					<br />
-					Strony www
-					<br />
-					Materiały firmowe
-					<br />
-					Materiały graficzne
+					Identyfikacja wizualna, Strony www, Materiały firmowe, Materiały graficzne
 					<br />
 					<br />
 					Wiesz, że Twoi klienci szukają Cię w sieci? Zadbamy o Twój wizerunek,
@@ -139,7 +144,7 @@ export const Offer = () => {
 					<li key={elem.header}>
 						<H3>{elem.header}</H3>
 						<H4>{elem.subheader}</H4>
-						{elem.content}
+						<Content>{elem.content}</Content>
 					</li>
 				))}
 			</Accordion>

@@ -1,13 +1,9 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { routes } from "../../App";
 import styled from "styled-components";
 
-interface Props {}
-
 const NavList = styled.ul`
 	list-style: none;
-	/* text-transform: uppercase; */
 
 	li {
 		margin-bottom: 0.75em;
@@ -23,7 +19,7 @@ const NavList = styled.ul`
 	}
 `;
 
-export const Menu: React.FC<Props> = () => {
+export const Menu = () => {
 	return (
 		<nav>
 			<NavList>

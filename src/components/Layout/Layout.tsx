@@ -3,7 +3,7 @@ import { Menu } from "../Menu/Menu";
 import { Socials } from "../Socials/Socials";
 import { useLocation } from "react-router-dom";
 import { Aside, Main, ToggleButton, Top, Logo } from "./styles";
-import logo from "../../images/logo-horizontal.jpg";
+import logo from "../../images/logo-horizontal.png";
 import { routes } from "../../App";
 import { PageTitle } from "../PageTitle/PageTitle";
 

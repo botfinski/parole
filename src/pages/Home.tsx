@@ -18,15 +18,41 @@ const Header = styled.h2`
 		var(--pink) 0px 0px 22px;
 `;
 
+const Container = styled.div`
+	display: grid;
+	grid-template-columns: 1.4fr 0.6fr;
+	grid-template-rows: 1fr;
+	grid-template-areas: "left right";
+	gap: 0.25em;
+	justify-items: stretch;
+`;
+
+const LeftSpan = styled.span`
+	text-align: right;
+	grid-area: left;
+`;
+
+const RightSpan = styled.span`
+	text-align: left;
+	grid-area: right;
+`;
+
 export const Home = () => {
 	return (
 		<Wrapper>
 			<Header>
-				Kreuje my
-				<br />
-				Tworzy my
-				<br />
-				Wdraża my
+				<Container>
+					<LeftSpan>Kreuje</LeftSpan>
+					<RightSpan>my</RightSpan>
+				</Container>
+				<Container>
+					<LeftSpan>Tworzy</LeftSpan>
+					<RightSpan>my</RightSpan>
+				</Container>
+				<Container>
+					<LeftSpan>Wdraża</LeftSpan>
+					<RightSpan>my</RightSpan>
+				</Container>
 			</Header>
 		</Wrapper>
 	);
