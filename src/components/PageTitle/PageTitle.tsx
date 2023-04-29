@@ -6,10 +6,9 @@ interface Props {
 }
 
 const H2 = styled.h2`
-	margin-top: 0.25em;
-	font-size: 4em;
+	margin-top: 1em;
+	font-size: 5em;
 	line-height: 1em;
-	/* text-transform: uppercase; */
 	text-align: center;
 	color: var(--lightPink);
 	text-shadow: var(--pink) 0px 0px 22px, var(--pink) 0px 0px 22px,

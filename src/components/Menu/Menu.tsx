@@ -3,6 +3,7 @@ import { routes } from "../../App";
 import styled from "styled-components";
 
 const NavList = styled.ul`
+	margin-top: 3em;
 	list-style: none;
 
 	li {

@@ -31,7 +31,7 @@ const Accordion = styled.ul`
 			max-height: none;
 
 			& ${Content} {
-				max-height: 300px;
+				max-height: 350px;
 				margin-top: 0.25em;
 				opacity: 1;
 			}

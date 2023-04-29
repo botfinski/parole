@@ -5,6 +5,7 @@ interface PropStyles {
 	isHomeOrContact?: boolean;
 	marginBottom?: boolean;
 	alignCenter?: boolean;
+	marginTop?: string;
 }
 
 export const ToggleButton = styled.button<PropStyles>`
@@ -14,7 +15,7 @@ export const ToggleButton = styled.button<PropStyles>`
 	display: flex;
 	align-items: center;
 	border: none;
-	margin-top: 40px;
+	margin-top: 60px;
 	background: transparent;
 	cursor: pointer;
 
@@ -64,22 +65,24 @@ export const ToggleButton = styled.button<PropStyles>`
 `;
 
 export const Top = styled.div`
-	height: 100px;
+	height: 120px;
 	position: absolute;
+	top: 0;
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
-	padding: 0 0 0 40px;
+	padding: 0 60px;
 `;
 
 export const Logo = styled.img`
 	height: 200px;
+	max-height: 100%;
 `;
 
 export const Main = styled.main<PropStyles>`
 	position: fixed;
-	/* overflow: scroll; */
+	/* overflow-y: scroll; */
 	width: 100%;
 	height: 100%;
 	background: ${props => (!props.isHomeOrContact ? `var(--lavender)` : `#fff`)};
@@ -118,16 +121,17 @@ export const Aside = styled.aside<PropStyles>`
 `;
 
 export const Wrapper = styled.div<PropStyles>`
-	height: 100%;
+	/* height: 100%; */
 	max-width: 80%;
 	display: flex;
 	flex-direction: column;
-	margin: 3em auto 0;
+	margin: ${props =>
+		props.marginTop ? `${props.marginTop} auto 0` : `3em auto 0`};
 	align-items: ${props => (props.alignCenter ? `center` : `normal`)};
 `;
 
 export const Subheader = styled.h3`
-	margin-bottom: 0.25em;
+	margin-bottom: 0.5em;
 	font-size: 3em;
 	text-align: center;
 	color: var(--lightPink);
@@ -143,14 +147,16 @@ export const Caption = styled.figure<PropStyles>`
 `;
 
 export const Typography = styled.p`
-	font-size: 25px;
+	font-size: 20px;
 	font-weight: 400;
 `;
 
 export const H3 = styled.h3`
 	font-size: 1.55em;
+	text-align: center;
 `;
 
 export const H4 = styled.h4`
 	font-size: 1.17em;
+	text-align: center;
 `;

@@ -33,7 +33,7 @@ const ContactList = styled.ul`
 
 export const Contact = () => {
 	return (
-		<Wrapper alignCenter>
+		<Wrapper alignCenter marginTop="5em">
 			<Subheader>Meet with us</Subheader>
 			<ContactList>
 				<li>
@@ -42,7 +42,7 @@ export const Contact = () => {
 				</li>
 				<li>
 					<PhoneIcon />
-					<a href="tel:+48700888999">+48 700 888 999</a>
+					<a href="tel:+48607797000">+48 607 797 000</a>
 				</li>
 				<li>
 					<CoffeeIcon />
