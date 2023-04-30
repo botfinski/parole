@@ -4,6 +4,7 @@ import {
 	H4,
 	Typography,
 	Wrapper,
+	breakpoints,
 } from "../components/Layout/styles";
 import styled from "styled-components";
 
@@ -22,10 +23,14 @@ const Accordion = styled.ul`
 	gap: 20px;
 
 	& > li {
-		width: calc(50% - 20px);
+		width: 100%;
 		padding: 20px;
 		border-radius: 20px;
 		overflow: hidden;
+
+		@media (min-width: ${breakpoints.md}) {
+			width: calc(50% - 20px);
+		}
 
 		&:hover {
 			max-height: none;
