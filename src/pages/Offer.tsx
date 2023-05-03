@@ -20,6 +20,7 @@ const Accordion = styled.ul`
 	display: flex;
 	flex-flow: row wrap;
 	align-items: flex-start;
+	justify-content: center;
 	gap: 20px;
 
 	& > li {

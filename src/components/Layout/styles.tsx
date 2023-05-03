@@ -4,6 +4,7 @@ export const breakpoints = {
 	sm: "380px",
 	md: "768px",
 	lg: "1200px",
+	xl: "1366px",
 };
 
 interface PropStyles {
@@ -90,23 +91,12 @@ export const Top = styled.div<PropStyles>`
 	justify-content: flex-end;
 	align-items: flex-start;
 	padding: 0 20px;
-
-	/* ${({ menuOpened }) =>
-		menuOpened &&
-		`
-    & ${ToggleButton} {
-				pointer-events: none;
-				
-				& > span {
-					opacity:0
-				}
-			}
-  `} */
+	z-index: 10;
 
 	@media (min-width: ${breakpoints.md}) {
 		height: 120px;
-		/* background: red; */
 		padding: 0 60px;
+		z-index: 10;
 	}
 `;
 
@@ -117,11 +107,15 @@ export const Logo = styled.img`
 
 export const Main = styled.main<PropStyles>`
 	position: fixed;
-	overflow-y: scroll;
+	/* overflow-y: scroll; */
 	width: 100%;
 	height: 100%;
-	background: ${props => (!props.isHomeOrContact ? `var(--lavender)` : `#fff`)};
-	z-index: 1;
+	/* background: ${props =>
+		!props.isHomeOrContact ? `var(--lavender)` : `#fff`}; */
+
+	overflow-y: ${props => (props.isHomeOrContact ? `hidden` : `scroll`)};
+	background: transparent;
+	z-index: 10;
 	transition: all 0.8s cubic-bezier(0.68, 0, 0.29, 1);
 
 	@media (max-width: ${breakpoints.md}) {
@@ -175,21 +169,29 @@ export const Aside = styled.aside<PropStyles>`
 export const Wrapper = styled.div<PropStyles>`
 	display: flex;
 	flex-direction: column;
+	width: 100%;
 	margin: ${props =>
 		props.marginTop ? `${props.marginTop} auto 0` : `3em auto 0`};
 	align-items: ${props => (props.alignCenter ? `center` : `normal`)};
+	max-width: calc(100% - 40px);
+	justify-content: center;
 
 	@media (max-width: ${breakpoints.md}) {
-		max-width: calc(100% - 40px);
-		/* height: ${props =>
-			props.marginTop
-				? `calc(100% - 2*${props.marginTop})`
-				: `calc(100% - 2*3em)`}; */
-		justify-content: center;
+		/* background-color: #0000ff5c; */
 	}
 
 	@media (min-width: ${breakpoints.md}) {
-		max-width: 80%;
+		/* background-color: #ff00006e; */
+
+		@media (max-height: ${breakpoints.md}) {
+			/* background-color: #51ff006d; */
+		}
+	}
+
+	@media (max-width: ${breakpoints.lg}) {
+		@media (max-height: 430px) {
+			/* background-color: #fc7527c7; */
+		}
 	}
 `;
 

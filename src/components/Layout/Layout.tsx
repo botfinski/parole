@@ -6,7 +6,6 @@ import { Aside, Main, ToggleButton, Top, Logo } from "./styles";
 import logo from "../../images/logo-horizontal.png";
 import { routes } from "../../App";
 import { PageTitle } from "../PageTitle/PageTitle";
-
 interface Props {
 	children: React.ReactNode;
 }
