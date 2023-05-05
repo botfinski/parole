@@ -47,7 +47,9 @@ export const Socials = () => {
 		<SocialsList>
 			{socials.map(social => (
 				<li key={social.name}>
-					<a href={social.url}>{social.icon}</a>
+					<a href={social.url} target="_blank">
+						{social.icon}
+					</a>
 				</li>
 			))}
 		</SocialsList>

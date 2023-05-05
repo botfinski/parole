@@ -42,8 +42,16 @@ export const Dot = styled.div`
 	width: 23px;
 	height: 23px;
 	margin: 16px;
-	/* background: linear-gradient(to right bottom, #d7faf8, #fdfdfd); */
-	background: linear-gradient(to right bottom, #04fff2, #ff0202);
+	background: linear-gradient(
+		to right bottom,
+		#bf73e3,
+		#d98aed,
+		#fb696a,
+		#fbbe97,
+		#facb7c,
+		#71c894
+	);
+	opacity: 0.5;
 	border-radius: 50%;
 `;
 
@@ -56,5 +64,5 @@ export const Cursor = styled.div`
 	margin: 9px;
 	background-color: var(--lightPink);
 	border-radius: 50%;
-	/* opacity: 0.3; */
+	opacity: 0.15;
 `;

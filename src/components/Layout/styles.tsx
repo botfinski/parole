@@ -16,22 +16,20 @@ interface PropStyles {
 }
 
 export const ToggleButton = styled.button<PropStyles>`
-	/* position: relative; */
 	position: absolute;
-	top: 30px;
+	top: 40px;
 	left: 20px;
 	width: 30px;
 	height: 30px;
 	display: flex;
 	align-items: center;
 	border: none;
-	/* margin-top: 40px; */
 	background: transparent;
 	cursor: pointer;
 	z-index: 99;
 
 	@media (min-width: ${breakpoints.md}) {
-		top: 60px;
+		top: 40px;
 		left: 60px;
 		width: 40px;
 		height: 40px;
@@ -92,6 +90,7 @@ export const Top = styled.div<PropStyles>`
 	align-items: flex-start;
 	padding: 0 20px;
 	z-index: 10;
+	background: ${props => (props.isHomeOrContact ? `#fff` : `none`)};
 
 	@media (min-width: ${breakpoints.md}) {
 		height: 120px;
@@ -110,11 +109,8 @@ export const Main = styled.main<PropStyles>`
 	/* overflow-y: scroll; */
 	width: 100%;
 	height: 100%;
-	/* background: ${props =>
-		!props.isHomeOrContact ? `var(--lavender)` : `#fff`}; */
-
+	background: ${props => (!props.isHomeOrContact ? `var(--lavender)` : `#fff`)};
 	overflow-y: ${props => (props.isHomeOrContact ? `hidden` : `scroll`)};
-	background: transparent;
 	z-index: 10;
 	transition: all 0.8s cubic-bezier(0.68, 0, 0.29, 1);
 
@@ -175,24 +171,6 @@ export const Wrapper = styled.div<PropStyles>`
 	align-items: ${props => (props.alignCenter ? `center` : `normal`)};
 	max-width: calc(100% - 40px);
 	justify-content: center;
-
-	@media (max-width: ${breakpoints.md}) {
-		/* background-color: #0000ff5c; */
-	}
-
-	@media (min-width: ${breakpoints.md}) {
-		/* background-color: #ff00006e; */
-
-		@media (max-height: ${breakpoints.md}) {
-			/* background-color: #51ff006d; */
-		}
-	}
-
-	@media (max-width: ${breakpoints.lg}) {
-		@media (max-height: 430px) {
-			/* background-color: #fc7527c7; */
-		}
-	}
 `;
 
 export const Subheader = styled.h3`

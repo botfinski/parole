@@ -13,14 +13,6 @@ interface Props {
 	children: React.ReactNode;
 }
 
-declare global {
-	interface Window {
-		MyNamespace: any;
-	}
-}
-
-window.MyNamespace = window.MyNamespace || {};
-
 export const BgAnimation: React.FC<Props> = ({ children }) => {
 	const staggerRef = useRef<any>(null);
 	const dotsWrapperRef = useRef<any>(null);
@@ -28,11 +20,23 @@ export const BgAnimation: React.FC<Props> = ({ children }) => {
 	const [grid, setGrid] = useState<any>([20, 10]);
 	let dotsNumber = Array.from(Array(grid[0] * grid[1]).keys());
 
+	const gridSizes = {
+		sm: [20, 16],
+		lg: [20, 25],
+	};
+
+	const isOnMobile = window.innerWidth < 768;
+	const isOnLarge = window.innerWidth >= 768;
+
 	useEffect(() => {
 		function handleResize() {
-			setGrid([20, 30]);
+			if (isOnMobile) {
+				setGrid(gridSizes.sm);
+			} else if (isOnLarge) {
+				setGrid(gridSizes.lg);
+			}
 
-			console.log(window.innerWidth);
+			isOnLarge && fitElementToParent(staggerRef.current, 0);
 		}
 
 		window.addEventListener("resize", handleResize);
@@ -46,7 +50,7 @@ export const BgAnimation: React.FC<Props> = ({ children }) => {
 		let animation: any;
 		let cell = 55;
 
-		fitElementToParent(staggerRef.current, 0);
+		isOnLarge && fitElementToParent(staggerRef.current, 0);
 
 		let index = anime.random(0, grid[0] * grid[1] - 1);
 		let nextIndex = 0;
@@ -144,6 +148,14 @@ export const BgAnimation: React.FC<Props> = ({ children }) => {
 			pause();
 		};
 	}, [grid]);
+
+	useEffect(() => {
+		if (isOnMobile) {
+			setGrid(gridSizes.sm);
+		} else if (isOnLarge) {
+			setGrid(gridSizes.lg);
+		}
+	}, []);
 
 	return (
 		<>

@@ -37,7 +37,7 @@ export const Layout: React.FC<Props> = ({ children }) => {
 				<Socials />
 			</Aside>
 			<Main menuOpened={menuOpened} isHomeOrContact={isHomeOrContact}>
-				<Top menuOpened={menuOpened}>
+				<Top menuOpened={menuOpened} isHomeOrContact={isHomeOrContact}>
 					<Logo alt="Logo Parole Media" src={logo} />
 				</Top>
 				{currentRoute.title !== "Home" && (
