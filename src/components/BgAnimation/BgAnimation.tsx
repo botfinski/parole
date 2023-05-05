@@ -44,7 +44,7 @@ export const BgAnimation: React.FC<Props> = ({ children }) => {
 		return () => {
 			window.removeEventListener("resize", handleResize);
 		};
-	}, [gridSizes.sm, gridSizes.lg, isOnLarge, isOnMobile]);
+	}, []);
 
 	useEffect(() => {
 		let animation: any;
@@ -147,7 +147,7 @@ export const BgAnimation: React.FC<Props> = ({ children }) => {
 		return () => {
 			pause();
 		};
-	}, [grid, gridSizes.sm, gridSizes.lg, isOnLarge, isOnMobile]);
+	}, [grid]);
 
 	useEffect(() => {
 		if (isOnMobile) {
@@ -155,7 +155,7 @@ export const BgAnimation: React.FC<Props> = ({ children }) => {
 		} else if (isOnLarge) {
 			setGrid(gridSizes.lg);
 		}
-	}, [gridSizes.sm, gridSizes.lg, isOnLarge, isOnMobile]);
+	}, []);
 
 	return (
 		<>
