@@ -1,15 +1,27 @@
-import { Subheader, Wrapper } from "../components/Layout/styles";
+import { Subheader, Wrapper, breakpoints } from "../components/Layout/styles";
 import styled from "styled-components";
 import { CoffeeIcon, MailIcon, PhoneIcon } from "../components/Icons/Icons";
 
 const ContactList = styled.ul`
 	margin-top: 2em;
+	display: flex;
+	flex-wrap: wrap;
+
+	@media (min-width: ${breakpoints.lg}) {
+		align-items: flex-start;
+		gap: 1em;
+	}
+
 	& > li {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: nowrap;
 		align-items: center;
-		gap: 1em;
+
+		@media (max-width: ${breakpoints.lg}) {
+			width: 100%;
+			gap: 1em;
+		}
 
 		&:not(:last-child) {
 			margin-bottom: 0.5em;
@@ -17,6 +29,10 @@ const ContactList = styled.ul`
 
 		svg {
 			width: 75px;
+
+			@media (min-width: ${breakpoints.lg}) {
+				max-height: 50px;
+			}
 		}
 
 		a {
@@ -46,7 +62,7 @@ export const Contact = () => {
 				</li>
 				<li>
 					<CoffeeIcon />
-					online/offline
+					<span>online/offline</span>
 				</li>
 			</ContactList>
 		</Wrapper>

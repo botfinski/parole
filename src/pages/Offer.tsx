@@ -44,15 +44,15 @@ const Accordion = styled.ul`
 		}
 
 		&:nth-child(1) {
-			background: linear-gradient(30deg, #a548ff, #7e36c7 70%);
+			background: linear-gradient(30deg, #6422b8, #4f1a94 70%);
 		}
 
 		&:nth-child(2) {
-			background: linear-gradient(30deg, #ff738e, #db5f78 70%);
+			background: linear-gradient(30deg, #ffa53b, #da8a2f 70%);
 		}
 
 		&:nth-child(3) {
-			background: linear-gradient(30deg, #ffd93b, #f7b542 70%);
+			background: linear-gradient(30deg, #ff738e, #da5a74 70%);
 		}
 
 		&:nth-child(4) {
