@@ -23,15 +23,9 @@ export const Layout: React.FC<Props> = ({ children }) => {
 	}, [pathname]);
 
 	const currentRoute = routes.filter(route => route.path === pathname)[0];
-	let isHomeOrContact;
 
-	if (currentRoute) {
-		isHomeOrContact =
-			currentRoute.path === "/" || currentRoute.path === "/contact";
-	}
-
-	// const isHomeOrContact =
-	// 	currentRoute.path === "/" || currentRoute.path === "/contact";
+	const isHomeOrContact =
+		currentRoute.path === "/" || currentRoute.path === "/contact";
 
 	return (
 		<>
