@@ -19,11 +19,11 @@ export const routes = [
 		title: "Oferta",
 		component: <Offer />,
 	},
-	{
-		path: "/portfolio",
-		title: "Portfolio",
-		component: <Portfolio />,
-	},
+	// {
+	// 	path: "/portfolio",
+	// 	title: "Portfolio",
+	// 	component: <Portfolio />,
+	// },
 	{
 		path: "/contact",
 		title: "Kontakt",

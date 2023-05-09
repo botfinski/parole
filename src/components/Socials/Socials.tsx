@@ -27,17 +27,17 @@ const SocialsList = styled.ul`
 const socials = [
 	{
 		name: "Facebook",
-		url: "https://google.com",
+		url: "https://www.facebook.com/parolemediapl/",
 		icon: <FacebookIcon />,
 	},
 	{
 		name: "Instagram",
-		url: "https://google.com",
+		url: "https://www.instagram.com/parolemedia/",
 		icon: <InstagramIcon />,
 	},
 	{
 		name: "LinkedIn",
-		url: "https://google.com",
+		url: "https://www.linkedin.com/company/parole-media/about/",
 		icon: <LinkedInIcon />,
 	},
 ];
