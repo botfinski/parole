@@ -37,9 +37,13 @@ const Accordion = styled.ul`
 			max-height: none;
 
 			& ${Content} {
-				max-height: 350px;
+				max-height: 410px;
 				margin-top: 0.25em;
 				opacity: 1;
+
+				@media (max-width: ${breakpoints.sm}) {
+					max-height: 440px;
+				}
 			}
 		}
 

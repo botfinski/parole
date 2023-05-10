@@ -1,3 +1,4 @@
-RewriteEngine on
-RewriteCond %{REQUEST_URI} !^/index.html$
-RewriteRule .*\.(php|html)$ /index.html [L,R=302]
+Options -MultiViews
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.html [QSA,L]

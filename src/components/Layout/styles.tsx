@@ -10,6 +10,7 @@ export const breakpoints = {
 interface PropStyles {
 	menuOpened?: boolean;
 	isHomeOrContact?: boolean;
+	isHome?: boolean;
 	marginBottom?: boolean;
 	alignCenter?: boolean;
 	marginTop?: string;
@@ -90,7 +91,7 @@ export const Top = styled.div<PropStyles>`
 	align-items: flex-start;
 	padding: 0 20px;
 	z-index: 10;
-	background: ${props => (props.isHomeOrContact ? `#fff` : `none`)};
+	background: ${props => (props.isHome ? `#fff` : `none`)};
 
 	@media (min-width: ${breakpoints.md}) {
 		height: 120px;
@@ -171,14 +172,34 @@ export const Wrapper = styled.div<PropStyles>`
 	align-items: ${props => (props.alignCenter ? `center` : `normal`)};
 	max-width: calc(100% - 40px);
 	justify-content: center;
+
+	@media (min-width: ${breakpoints.md}) {
+		height: calc(100% - 75px);
+	}
+
+	@media (max-width: ${breakpoints.md}) {
+		margin: ${props =>
+			props.isHome
+				? `10em auto 0`
+				: `${() =>
+						props.marginTop ? `${props.marginTop} auto 0` : `3em auto 0`}`};
+	}
+
+	@media (min-width: ${breakpoints.md}) {
+		margin: ${props => (props.isHome ? `5em auto 0` : `3em auto 0`)};
+	}
 `;
 
 export const Subheader = styled.h3`
 	margin-bottom: 0.5em;
-	font-size: 3em;
+	font-size: 2em;
 	text-align: center;
 	color: var(--lightPink);
 	text-shadow: var(--text-shadow);
+
+	@media (min-width: ${breakpoints.lg}) {
+		font-size: 3em;
+	}
 `;
 
 export const Caption = styled.figure<PropStyles>`

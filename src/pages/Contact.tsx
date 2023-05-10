@@ -6,6 +6,7 @@ const ContactList = styled.ul`
 	margin-top: 2em;
 	display: flex;
 	flex-wrap: wrap;
+	max-width: 100%;
 
 	@media (min-width: ${breakpoints.lg}) {
 		align-items: flex-start;
@@ -32,6 +33,10 @@ const ContactList = styled.ul`
 
 			@media (min-width: ${breakpoints.lg}) {
 				max-height: 50px;
+			}
+
+			@media (max-width: 480px) {
+				max-height: 30px;
 			}
 		}
 

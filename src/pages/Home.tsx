@@ -16,7 +16,13 @@ const Header = styled.h2`
 	text-shadow: var(--pink) 0px 0px 22px, var(--pink) 0px 0px 22px,
 		var(--pink) 0px 0px 22px;
 
-	@media (min-width: ${breakpoints.md}) {
+	@media (orientation: landscape) {
+		font-size: 23vh;
+		gap: 0.3em;
+		grid-template-columns: 1.2fr 0.8fr;
+	}
+
+	/* @media (min-width: ${breakpoints.md}) {
 		@media (max-height: ${breakpoints.md}) {
 			font-size: 7em;
 			gap: 0.3em;
@@ -35,7 +41,7 @@ const Header = styled.h2`
 		grid-template-columns: 1.15fr 0.85fr;
 		gap: 0.3em;
 		font-size: 13vw;
-	}
+	} */
 `;
 
 const LeftSpan = styled.span`
@@ -51,7 +57,11 @@ const RightSpan = styled.span`
 export const Home = () => {
 	return (
 		<BgAnimation>
-			<Wrapper marginTop="6.5em" style={{ position: "relative", zIndex: 10 }}>
+			<Wrapper
+				isHome
+				// marginTop="10em"
+				style={{ position: "relative", zIndex: 10 }}
+			>
 				<Header>
 					<LeftSpan>Kreuje</LeftSpan>
 					<RightSpan>my</RightSpan>

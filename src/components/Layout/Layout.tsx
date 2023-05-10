@@ -27,6 +27,8 @@ export const Layout: React.FC<Props> = ({ children }) => {
 	const isHomeOrContact =
 		currentRoute.path === "/" || currentRoute.path === "/contact";
 
+	const isHome = currentRoute.path === "/";
+
 	return (
 		<>
 			<ToggleButton onClick={handleMenuToggle} menuOpened={menuOpened}>
@@ -37,7 +39,11 @@ export const Layout: React.FC<Props> = ({ children }) => {
 				<Socials />
 			</Aside>
 			<Main menuOpened={menuOpened} isHomeOrContact={isHomeOrContact}>
-				<Top menuOpened={menuOpened} isHomeOrContact={isHomeOrContact}>
+				<Top
+					menuOpened={menuOpened}
+					isHomeOrContact={isHomeOrContact}
+					isHome={isHome}
+				>
 					<Logo alt="Logo Parole Media" src={logo} />
 				</Top>
 				{currentRoute && currentRoute.title !== "Home" && (
